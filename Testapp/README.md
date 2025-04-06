@@ -19,6 +19,10 @@ Make sure the following are installed:
 ```bash
 git clone https://github.com/IbrahimAdell/FinalProjectCode.git
 cd FinalProjectCode
+
+
+![Image](https://github.com/user-attachments/assets/08ac5da5-7851-4cd6-a2a4-f4c1454673d8)
+
 ```
 
 ---
