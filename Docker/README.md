@@ -68,7 +68,7 @@ http://localhost:8080
 You should see your Spring Boot application message.
 
 📸 App View in Browser:
-![App View](app-browser.png)
+![App-browser](app-browser.png)
 
 ---
 
