@@ -20,7 +20,7 @@ Make sure the following are installed:
 git clone https://github.com/IbrahimAdell/FinalProjectCode.git
 cd FinalProjectCode
 
-![Alt Text](https://github.com/ebrahimelkhateb/NTI_CloudDevOpsProject_IVOLVE/blob/main/assets/clone%20repo.png?raw=true)
+![Alt Text](https://github.com/ebrahimelkhateb/NTI_CloudDevOpsProject_IVOLVE/blob/main/assets/clone%20repo.png)
 ```
 
 ---
