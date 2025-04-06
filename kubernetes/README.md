@@ -21,7 +21,7 @@ sudo rpm -ivh minikube-latest.x86_64.rpm
 ---
 ## ▶️ Step 2: Start Minikube
 ```bash
-minikube start --driver=docker --memory=1200mb
+minikube start 
 ```
 Check Minikube status:
 ```bash
