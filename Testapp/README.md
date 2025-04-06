@@ -20,7 +20,7 @@ Make sure the following are installed:
 git clone https://github.com/IbrahimAdell/FinalProjectCode.git
 cd FinalProjectCode
 
-![clone repo](https://github.com/user-attachments/assets/421ef41b-d320-49c1-9c5a-cac466822a8e)
+![Image](https://github.com/user-attachments/assets/6dc0393a-f0f6-4b22-9068-b7e48d839d08)
 
 ```
 
