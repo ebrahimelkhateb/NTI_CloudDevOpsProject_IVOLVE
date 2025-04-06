@@ -129,7 +129,7 @@ http://myjava-app.ivolve.com
 Once deployed, you should see the Spring Boot application running. The application shows different Pod IPs as requests are load-balanced between replicas:
 
 ### Pod 1 (IP: 10.244.0.8)
-![Spring Boot App - Pod 1](/api/placeholder/400/320)
+![Spring Boot App - Pod 1](![Image](https://github.com/user-attachments/assets/71b7832b-274f-4478-9c4e-a38188b3aa72))
 
 ### Pod 2 (IP: 10.244.0.9)
 ![Spring Boot App - Pod 2](/api/placeholder/400/320)
