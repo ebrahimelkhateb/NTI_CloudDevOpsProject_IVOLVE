@@ -1,6 +1,6 @@
-# Kubernetes Setup with Minikube on Rocky Linux
+# Deploying a Java Web Application on Kubernetes
 
-This guide walks you through setting up a local Kubernetes environment on Rocky Linux using Minikube and deploying a Spring Boot application.
+This guide walks you through setting up a local Kubernetes environment  using Minikube and deploying a Java Web  application.
 
 ---
 
