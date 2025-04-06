@@ -132,6 +132,5 @@ Once deployed, you should see the Spring Boot application running. The applicati
 ![Image](https://github.com/user-attachments/assets/71b7832b-274f-4478-9c4e-a38188b3aa72)
 
 ### Pod 2 (IP: 10.244.0.9)
-![Spring Boot App - Pod 2](/api/placeholder/400/320)
-
+![Image](https://github.com/user-attachments/assets/e4fbe02d-95be-4ae0-b9b1-17157fc4e37c)
 This confirms our Kubernetes deployment is working correctly with multiple replicas handling traffic through the ingress controller.
