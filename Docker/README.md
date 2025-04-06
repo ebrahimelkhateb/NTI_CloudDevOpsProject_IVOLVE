@@ -14,8 +14,6 @@ This step explains how to containerize your Spring Boot application using Docker
 
 ## 📝 Dockerfile
 
-
-
 ```dockerfile
 FROM openjdk:17-jdk-slim
 
@@ -27,9 +25,6 @@ EXPOSE 8081
 
 CMD ["java", "-jar", "app.jar"]
 ```
-
-📸 Dockerfile:
-![Dockerfile](Dockerfile.png)
 
 ---
 
@@ -46,14 +41,13 @@ docker build -t my-java-application .
 ## ▶️ Run the Container
 
 ```bash
- docker run -d -p 8080:8081 my-java-app
+docker run -d -p 8080:8081 my-java-app
 ```
 
 - Port `8081` is exposed in the container
 - Port `8080` on your local machine will forward to it
 
 📸 App Running in Container:
-![Container App](container app.png)
 
 ---
 
@@ -67,10 +61,6 @@ http://localhost:8080
 
 You should see your Spring Boot application message.
 
-📸 App View in Browser:
-![App-browser](app-browser.png)
-
 ---
 
-
-
+![App Running](container%20app.png)
