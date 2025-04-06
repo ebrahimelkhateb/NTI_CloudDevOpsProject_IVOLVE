@@ -12,15 +12,7 @@ This guide walks you through setting up a local Kubernetes environment on Rocky 
 sudo dnf install -y curl wget conntrack
 ```
 
-### 🐳 1.2 Install Docker
 
-```bash
-sudo dnf install -y dnf-plugins-core
-sudo dnf config-manager --add-repo=https://download.docker.com/linux/centos/docker-ce.repo
-sudo dnf install -y docker-ce docker-ce-cli containerd.io
-
-sudo systemctl start docker
-sudo systemctl enable docker
 ```
 
 ### 📦 1.3 Install Kubectl
@@ -60,7 +52,7 @@ minikube status
 ### 📂 3.1 Create Namespace
 
 ```bash
-kubectl create namespace springboot-app
+kubectl create namespace ivolve
 ```
 
 ### ⚙️ 3.2 Create Deployment YAML
@@ -71,24 +63,23 @@ kubectl create namespace springboot-app
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: springboot-deployment
-  namespace: springboot-app
+  name: app-deployment
+  namespace: ivolve
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
-      app: springboot
+      app: myapp
   template:
     metadata:
       labels:
-        app: springboot
+        app: myapp
     spec:
       containers:
-        - name: springboot
-          image: springboot-app:latest
-          imagePullPolicy: Never
-          ports:
-            - containerPort: 8081
+      - name: myapp
+        image: ebrahimelkhateb/my-java-application
+        ports:
+        - containerPort: 8081
 ```
 
 ### 🌐 3.3 Create Service YAML
@@ -99,11 +90,11 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: springboot-service
-  namespace: springboot-app
+  name: app-service
+  namespace: ivolve
 spec:
   selector:
-    app: springboot
+    app: myapp
   ports:
     - protocol: TCP
       port: 80
@@ -125,22 +116,24 @@ minikube addons enable ingress
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: springboot-ingress
-  namespace: springboot-app
+  name: app-ingress
+  namespace: ivolve
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
+    kubernetes.io/ingress.class: "nginx"
 spec:
+  ingressClassName: nginx
   rules:
-    - host: springboot.local
-      http:
-        paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: springboot-service
-                port:
-                  number: 80
+  - host: myjava-app.ivolve.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: app-service
+            port:
+              number: 80
 ```
 
 ---
@@ -166,35 +159,21 @@ sudo nano /etc/hosts
 Add this line:
 
 ```
-127.0.0.1 springboot.local
+<minikube-ip> myjava-app.ivolve.com
 ```
 
 ### 🌐 Open in Browser
 
 ```
-http://springboot.local
+http://myjava-app.ivolve.com
 ```
 
 ---
 
-## 🪤 Step 6: Clean Up
 
-```bash
-kubectl delete -f ingress.yaml
-kubectl delete -f service.yaml
-kubectl delete -f deployment.yaml
-kubectl delete namespace springboot-app
-```
+
+
 
 ---
 
-## 📸 Optional: Take Screenshots
-
-- `minikube start`
-- `kubectl get all -n springboot-app`
-- Spring Boot App in browser at `http://springboot.local`
-
----
-
-> Created for local Kubernetes development on Rocky Linux using Minikube.
 
